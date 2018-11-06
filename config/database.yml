@@ -14,5 +14,5 @@ test:
 production:
   <<: *default
   database: sample-app-taskleaf_production
-  username: psql-sample
-  password: <%= ENV['PSQL-SAMPLE_DATABASE_PASSWORD'] %>
+  username: sample-app-taskleaf
+  password: <%= ENV['SAMPLE_APP_TASKLEAF_DATABASE_PASSWORD'] %>

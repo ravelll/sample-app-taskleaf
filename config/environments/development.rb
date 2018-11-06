@@ -10,6 +10,10 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
+  # ハンドリングされないエラーが出たときの振る舞い
+  # true => 開発時用のデバッグ情報ページ
+  # false => 本番用のエラーページ
+  # (コントローラーの rescue_from はこの値を無視する)
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
@@ -58,4 +62,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # ログレベルを設定する
+  # config.log_level = :warn
 end

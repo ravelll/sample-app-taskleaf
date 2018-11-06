@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
 
+  def confirm_new
+    @task = current_user.tasks.new(task_params)
+    render :new unless @task.valid?
+  end
+
   def index
     @tasks = current_user.tasks.recent
   end
@@ -14,6 +19,11 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.new(task_params)
+
+    if params[:back].present?
+      render :new
+      return
+    end
 
     if @task.save
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
