@@ -5,6 +5,7 @@ ruby '2.5.3'
 
 gem "bootstrap", "~> 4.1"
 gem "html2slim", "~> 0.2.0"
+gem "ransack", "~> 2.1"
 gem "slim-rails", "~> 3.2"
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
