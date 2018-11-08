@@ -13,15 +13,6 @@ u = User.create({
   password_confirmation: 'password',
 })
 
-Task.create([
-  {
-    name: 'タスクを作る',
-    description: 'やっていく必要があるのでタスクを作ります',
-    user: u
-  },
-  {
-    name: 'より凄いタスクを作る',
-    description: '人間は日々進化するのでタスクの難易度を徐々に高めることで自己効果感が維持されます',
-    user: u
-  },
-])
+u.tasks.create({ name: 'タスクを作る', description: 'やっていく必要があるのでタスクを作ります' })
+u.tasks.create({ name: 'より凄いタスクを作る', description: '人間は日々進化するのでタスクの難易度を徐々に高めることで自己効果感が維持されます' })
+
