@@ -38,3 +38,5 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rspec-rails'
 end
+
+gem "csv", "~> 3.0"
