@@ -38,6 +38,9 @@ class TasksController < ApplicationController
 
     if @task.save
       TaskMailer.creation_email(@task).deliver_now
+      SampleJob.perform_later
+      # ex. 1週間後に実行
+      # SampleJob.set(wait: 1.week).perform_later
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
     else
       render :new
