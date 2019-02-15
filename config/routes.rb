@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     post :import, on: :collection
   end
 
+  namespace :hoge do
+    get '/tasks', controller: :tasks, action: :index, format: :xlsx
+  end
+
   namespace :admin do
     resources :users
   end
